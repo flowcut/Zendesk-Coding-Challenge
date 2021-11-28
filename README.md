@@ -20,14 +20,16 @@ pip install -e .
 ```
 ./bin/zticketviewerRUN
 ```
-A list of test tickets will be imported.
+A list of test tickets will be imported. The ticket file can be found at <code>tests/data/tickets.json</code>.
+
+Then, go to this link: 
+<http://localhost:8000/accounts/login/>
 
 # To clean preloaded tickets:
 ```
 ./bin/zticketviewerRESET
 ```
-Then, go to this link: 
-<http://localhost:8000/accounts/login/>
+
 # To run tests:
 First clean existing tickets (command above), then:
 ```
