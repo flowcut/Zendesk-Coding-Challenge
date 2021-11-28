@@ -2,31 +2,34 @@ The app is developed on WSL.
 
 # To install app:
 First clone the git repository.
+## To create python virtual environment:
+```
+python3 -m venv env
+```
 ## To activate python virtual environment:
 ```
-$ sudo apt-get update
-$ sudo apt-get install python3 python3-pip python3-venv python3-wheel python3-setuptools
-$ source env/bin/activate
+source env/bin/activate
 ```
 ## To install app dependency:
 ```
-$ pip install -r requirements.txt
-$ pip install -e .
+pip install --upgrade pip setuptools wheel
+pip install -r requirements.txt
+pip install -e .
 ```
 # To start app:
 ```
-$ ./bin/zticketviewerRUN
+./bin/zticketviewerRUN
 ```
 A list of test tickets will be imported.
 
 # To clean preloaded tickets:
 ```
-$ ./bin/zticketviewerRESET
+./bin/zticketviewerRESET
 ```
 # To run tests:
 First clean existing tickets (command above), then:
 ```
-$ pytest
+pytest
 ```
 
 
