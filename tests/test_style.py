@@ -1,12 +1,7 @@
 """Check Python style with pycodestyle, pydocstyle and pylint."""
-import os
-import pathlib
-import shutil
-import collections
+
 from urllib.parse import urlparse
 import subprocess
-import bs4
-import utils
 
 
 def test_pycodestyle():

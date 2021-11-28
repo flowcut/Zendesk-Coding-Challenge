@@ -6,6 +6,9 @@
 set -Eeuo pipefail
 set -x
 
+curl https://zccumink.zendesk.com/api/v2/imports/tickets/create_many.json -v -u umink@umich.edu:Awin1m2n3b -X POST -d @tests/data/tickets.json -H "Content-Type: application/json"
+
 export FLASK_ENV=development
 export FLASK_APP=zticketviewer
 flask run --host 0.0.0.0 --port 8000
+

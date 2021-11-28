@@ -3,7 +3,7 @@ import re
 import bs4
 import requests
 from tests.utils import wait_job_done
-import utils
+from tests import utils
 from requests.auth import HTTPBasicAuth
 import json
 
