@@ -1,4 +1,4 @@
-The app is developed on WSL.
+The app is developed on WSL. It has been tested on WSL (Ubuntu-20.04) and macOS (Catalina-10.15.7).
 
 # To install app:
 First clone the git repository.
@@ -26,12 +26,13 @@ A list of test tickets will be imported.
 ```
 ./bin/zticketviewerRESET
 ```
-Then, go to this link:
+Then, go to this link: 
 <http://localhost:8000/accounts/login/>
 # To run tests:
 First clean existing tickets (command above), then:
 ```
 pytest
 ```
+It takes less than 1 minute to finish the tests. The tests send requests to Zendesk API endpoints with limited access rates. Please don't run another round of tests within 30 seconds.
 
 
