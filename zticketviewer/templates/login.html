@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% block content %}
+<div class="login">
+	<form action="/accounts/login/" method="post" enctype="multipart/form-data">
+		email address: <input type="text" name="emailaddress"/><br><br>
+		password: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input type="password" name="password"/><br><br>
+		<input type="submit" value="Login"/>
+	</form>
+</div>
+
+{% endblock %}

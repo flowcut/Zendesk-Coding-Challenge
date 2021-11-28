@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% block content %}
+<div class="login">
+	Authentication Failed.
+	<br>
+	<form action="/accounts/login/" method="get" enctype="multipart/form-data">
+		<input type="submit" value="return to login"/>
+	</form>
+</div>
+
+{% endblock %}

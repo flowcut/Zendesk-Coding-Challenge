@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% block content %}
+<div class="navigationbar">
+    <span style="font-weight:bold;margin: 20px 0px 0px;">Error: {{error_code}} </span>
+    <button onclick="goBack()" style="float: right;">Go Back</button>   
+</div>
+<div class="ticket" style="cursor:initial">
+    <div class="ticket_content">
+        {{error_message}} 
+    </div>  
+</div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+{% endblock %}

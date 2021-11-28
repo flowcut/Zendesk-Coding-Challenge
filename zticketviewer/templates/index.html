@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% block content %}
+
+<div class="navigationbar">
+    <span style="font-weight:bold;margin: 20px 0px 0px;">{{guidance}} </span>
+    {% if next_url %}
+    <form action={{next_url}} method="get" enctype="multipart/form-data" style="float:right;">
+        <input type="submit" value="Next Page"/ >
+    </form>
+    {% endif %}
+    {% if prev_url %}
+    <form action={{prev_url}} method="get" enctype="multipart/form-data" style="float:right">
+        <input type="submit" value="Previous Page"/ >
+    </form>
+    {% endif %}          
+</div>
+
+{% for ticket in tickets %}
+    <div class="ticket" onclick="redirect2('{{ ticket.url }}')">
+        <div class="subject" onmouseover="toggleon(this)" onmouseout="toggleoff(this)">                      
+            <div class="status"> {{ticket.status}} </div>
+            <span class="ticket_id">#{{ticket.id}}:</span> {{ticket.subject}}  
+        </div>
+        <div class="summary">
+            priority: {{ticket.priority}}  
+            <span style="float:right">updated at: {{ticket.update_time}}  </span> 
+        </div>        
+    </div>
+{% endfor %}
+<script>
+    function toggleon(el) {
+        content = el.nextElementSibling;
+        content.style.display = "block";
+        // if (content.style.display == "none") {
+        //     content.style.display = "block";
+        // } 
+    }
+
+    function toggleoff(el) {
+        content = el.nextElementSibling;
+        if (content.style.display == "block") {
+            content.style.display = "none";
+        } 
+    }
+
+    function redirect2(url) {
+        location.href = url
+    }
+</script>
+{% endblock %}

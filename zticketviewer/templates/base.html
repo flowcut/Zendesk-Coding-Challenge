@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            div.center {
+                margin:auto;
+                width: 80%;
+                padding: 10px;
+            }
+            div.topline {
+                overflow: auto;
+                margin: 20px auto 0px auto;
+                height: 80px;
+                width: 1000px;
+                font-size: 40px;
+                font-weight: bold;
+                color: darkslategrey;
+            }
+            div.login{
+                overflow: auto;         
+                width: 1000px;
+                margin: 0px auto;
+                color: darkslategrey;
+                font-weight: bold;
+            }
+            div.navigationbar {   
+                overflow: auto;         
+                width: 1000px;
+                margin: 0px auto;
+                padding: 0px 2px;
+                font-size: 23px;
+                color: darkslategrey;
+                background-color: papayawhip;     
+                /* text-align:center;            */
+            }
+            div.user {
+				float: right;
+				padding: 20px 0px 5px 0px;
+				font-size: 20px;
+				font-weight: bold;
+			}
+            div.ticket {
+				border: 1px solid darkslategrey;
+				/* border-radius: 8px; */
+				width: 1000px;
+				margin: 5px auto;
+                background-color: white;
+                cursor: pointer;
+			}
+            div.subject {
+                padding: 2px;
+                background-color: beige;
+                color: darkslategrey;
+                font-weight: bold;
+                margin: 3px;
+            }
+            div.status {
+				float: left;
+                text-align: center;
+                background-color: cadetblue;
+                color:cornsilk;
+                padding: 0px 2px 0px 2px;
+                margin: 0px 2px 0px 0px;
+                width: 100px;
+				/* padding: 20px 0px 5px 0px; */
+			}
+            div.summary {
+                color:cornsilk;
+                background-color: darkseagreen;
+                margin: 4px 4px 4px 4px;
+                padding: 0px 4px;
+                display: none;
+                font-weight: bold;
+            }
+            div.ticket_body {
+                color:cornsilk;
+                background-color: darkseagreen;
+                margin: 4px 4px 4px 4px;
+                padding: 4px;
+                /* font-weight: bold; */
+            }
+            div.ticket_content {
+                padding: 4px;
+                background-color: beige;
+                color: darkslategrey;
+                margin: 3px;
+            }
+            span.tag {
+                background-color:cornsilk;
+                color: cadetblue;
+                margin: 0px 2px 0px 2px;
+                padding: 0px 2px 0px 2px;
+                font-weight: bold;
+            }
+            input[type=button], input[type=submit], input[type=reset], button {
+                background-color: darkseagreen;
+                border: none;
+                color: white;
+                padding: 4px;
+                width: 100px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="center">
+            <div class="topline">
+                Zendesk Ticket Viewer
+                <div class="user">
+                    {% if user %}          
+                    <form action="/accounts/logout/" method="get" enctype="multipart/form-data">
+                        {{ user }}  <input type="submit" value="Logout"/>
+                    </form>
+                    {% endif %}
+                </div>
+                <!-- <hr> -->
+            </div>
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html>

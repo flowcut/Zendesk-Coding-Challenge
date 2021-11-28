@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% block content %}
+<div class="navigationbar">
+    <span style="font-weight:bold;margin: 20px 0px 0px;">{{guidance}} </span>
+    <button onclick="goBack()" style="float: right;">Go Back</button>   
+</div>
+<div class="ticket" style="cursor:initial">
+    <div class="subject" style="font-size: 20px;">
+        {{ticket.subject}}            
+        <div class="status"> {{ticket.status}} </div>
+    </div>
+    <div class="ticket_body">
+        <b>
+        priority: {{ticket.priority}}  
+        <span style="float:right">updated at: {{ticket.update_time}}  </span> 
+        </b>
+        <br>
+        <b>Requester</b> [ {{requester.type}} ]: {{requester.value}}
+        <br>
+        <b>Tags: </b>
+        {% for tag in ticket.tags %}
+        <span class="tag"> {{tag}} </span>
+        {% endfor %}
+    </div>   
+    <div class="ticket_content">
+        {{ticket.body}} 
+    </div>     
+</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+{% endblock %}
