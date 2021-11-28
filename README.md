@@ -26,6 +26,8 @@ A list of test tickets will be imported.
 ```
 ./bin/zticketviewerRESET
 ```
+Then, go to this link:
+<http://localhost:8000/accounts/login/>
 # To run tests:
 First clean existing tickets (command above), then:
 ```
